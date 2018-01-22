@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<project default="dist" basedir=".">
+
+ <target name="compile" >
+ 	<mkdir dir="build/classes"/>
+  	 <javac srcdir="src" destdir="build/classes"/>
+  </target>
+
+  <target name="dist" depends="compile" description="Create jar">
+  <jar jarfile="Calculator.jar" basedir="build/classes" >
+   	 <manifest>
+ 	        <attribute name="Main-Class" value="Calculator"  />
+ 	      </manifest>
+  	</jar>
+  </target>
+  
+</project>
